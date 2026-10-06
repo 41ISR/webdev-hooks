@@ -1,6 +1,6 @@
 import "./Sidebar.css"
 
-const Sidebar = () => {
+const Sidebar = ({collapsed}) => {
     return (
         <aside className="sidebar">
             <div className="brand">

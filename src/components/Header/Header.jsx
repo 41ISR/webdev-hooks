@@ -1,6 +1,6 @@
 import "./Header.css"
 
-const Header = () => {
+const Header = ({setCollapsed}) => {
     return (
         <header className="topbar">
             <button
