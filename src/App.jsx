@@ -8,7 +8,7 @@ import PageSettings from "./pages/Settings/Settings"
 
 function App() {
     const [collapsed, setCollapsed] = useState(false)
-    const [page, setPage] = useState("activity")
+    const [page, setPage] = useState("board")
     return (
         <div
             className={`app-shell${collapsed ? " sidebar-collapsed" : ""}`}

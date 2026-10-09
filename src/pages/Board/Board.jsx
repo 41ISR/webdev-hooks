@@ -10,9 +10,13 @@ const PageBoard = () => {
     const [tasks, setTasks] = useState([])
     const handleSubmit = (e) => {
         e.preventDefault()
+        
+        // "             Rewrite frontend to react   "
+        // "Rewrite frontend to react"
+        if (taskName.trim() === "") return
 
         const newTask = {
-            name: taskName,
+            name: taskName.trim(),
             done: false,
             counter: 0,
             id: nanoid(),
@@ -20,6 +24,7 @@ const PageBoard = () => {
 
         setTasks(o => [...o, newTask])
     }
+    
     return (
         <section className="page active" id="page-board">
             <div className="page-header">
@@ -72,7 +77,7 @@ const PageBoard = () => {
                     </form>
                     <div className="task-list">
                         {tasks.map((el) => (
-                            <TaskRow key={el.id} {...el} />
+                            <TaskRow setTasks={setTasks} key={el.id} {...el} />
                         ))}
                     </div>
                 </div>
