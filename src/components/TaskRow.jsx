@@ -1,33 +1,26 @@
 const TaskRow = ({ setTasks, name, done, counter, id }) => {
     const handleCounter = (step) => {
-        setTasks((o) => {
-            return o.map((el) => {
-                if (el.id === id) {
-                    return {...el, counter: el.counter + step}
-                } else {
-                    return el
-                }
-            })
-        })
+        // setTasks((o) => {
+        //     return o.map((el) => {
+        //         if (el.id === id) {
+        //             return {...el, counter: el.counter + step}
+        //         } else {
+        //             return el
+        //         }
+        //     })
+        // })
+        setTasks((o) =>
+            o.map((el) =>
+                el.id === id ? { ...el, counter: el.counter + step } : el,
+            )
+        )
     }
 
     const handleDone = () => {}
 
     const handleDelete = () => {
-        
+        setTasks((o) => o.filter((el) => el.id !== id))
     }
-    
-    // [
-    //     {
-    //         id: 1,
-    //     },
-    //     {
-    //         id: 2,
-    //     },
-    //     {
-    //         id: 3,
-    //     },
-    // ].filter((el) => )
 
     return (
         <div className="task-row">
@@ -53,7 +46,9 @@ const TaskRow = ({ setTasks, name, done, counter, id }) => {
             <button onClick={() => handleCounter(2)} className="quick-bump">
                 +2
             </button>
-            <button className="icon-danger">✕</button>
+            <button onClick={handleDelete} className="icon-danger">
+                ✕
+            </button>
         </div>
     )
 }

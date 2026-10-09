@@ -11,8 +11,6 @@ const PageBoard = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         
-        // "             Rewrite frontend to react   "
-        // "Rewrite frontend to react"
         if (taskName.trim() === "") return
 
         const newTask = {
@@ -23,6 +21,8 @@ const PageBoard = () => {
         }
 
         setTasks(o => [...o, newTask])
+        
+        setTaskName("")
     }
     
     return (
