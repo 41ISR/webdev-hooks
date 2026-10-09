@@ -6,6 +6,7 @@ const Header = ({setCollapsed}) => {
             <button
                 className="icon-btn"
                 id="sidebarToggle"
+                onClick={() => setCollapsed(o => !o)}
                 title="Collapse sidebar"
             >
                 <svg
